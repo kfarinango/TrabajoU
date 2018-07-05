@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Controles\encriptacionAES.cs" />
     <Compile Include="Controles\Transacciones.cs" />
+    <Compile Include="Ejercicios\fMantenimientoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ejercicios\fMantenimientoClientes.Designer.cs">
+      <DependentUpon>fMantenimientoClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ejercicios\fMantenimientoProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </Compile>
     <EmbeddedResource Include="Ejercicios\fAmortizacion.resx">
       <DependentUpon>fAmortizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicios\fMantenimientoClientes.resx">
+      <DependentUpon>fMantenimientoClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ejercicios\fMantenimientoProveedores.resx">
       <DependentUpon>fMantenimientoProveedores.cs</DependentUpon>

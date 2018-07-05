@@ -140,6 +140,63 @@ namespace WindowsFormsClases2018.Controles
             }
 
         }
+        //Clientes
+        public void insertarCliente(string CustomerID, string CompanyName, string ContactName, string ContactTitle, string Address)
+        {
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["coneccion"].ToString()))
+            {
+                cn.Open();
+                SqlCommand cmdact = new SqlCommand();
+                cmdact.CommandText = "CrearCliente";
+                cmdact.CommandType = CommandType.StoredProcedure;
+                cmdact.Connection = cn;
+                cmdact.Parameters.AddWithValue("@CustomerID", CustomerID);
+                cmdact.Parameters.AddWithValue("@CompanyName", CompanyName);
+                cmdact.Parameters.AddWithValue("@ContactName", ContactName);
+                cmdact.Parameters.AddWithValue("@ContactTitle", ContactTitle);
+                cmdact.Parameters.AddWithValue("@Address", Address);
+                cmdact.ExecuteNonQuery();
+                cn.Close();
+            }
+
+        }
+        public void eliminarCliente(string CustomerID)
+        {
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["coneccion"].ToString()))
+            {
+                cn.Open();
+                SqlCommand cmdact = new SqlCommand();
+                cmdact.CommandText = "EliminarCliente";
+                cmdact.CommandType = CommandType.StoredProcedure;
+                cmdact.Connection = cn;
+
+                cmdact.Parameters.AddWithValue("@CustomerID", CustomerID);
+                cmdact.ExecuteNonQuery();
+                cn.Close();
+            }
+
+        }
+
+        public void actualizarCliente(string CustomerID, string CompanyName, string ContactName, string ContactTitle, string Address)
+        {
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["coneccion"].ToString()))
+            {
+                cn.Open();
+                SqlCommand cmdact = new SqlCommand();
+                cmdact.CommandText = "ActualizarCliente";
+                cmdact.CommandType = CommandType.StoredProcedure;
+                cmdact.Connection = cn;
+
+                cmdact.Parameters.AddWithValue("@CustomerID", CustomerID);
+                cmdact.Parameters.AddWithValue("@CompanyName", CompanyName);
+                cmdact.Parameters.AddWithValue("@ContactName", ContactName);
+                cmdact.Parameters.AddWithValue("@ContactTitle", ContactTitle);
+                cmdact.Parameters.AddWithValue("@Address", Address);
+                cmdact.ExecuteNonQuery();
+                cn.Close();
+            }
+
+        }
 
         //Otras funciones
 
@@ -171,6 +228,20 @@ namespace WindowsFormsClases2018.Controles
                 dr.Close();
             }
 
+        }
+
+        //Limpiar textbox
+
+        public void limpiarTextbox(TextBox txtCodigo, TextBox txtNombreCompania, TextBox txtNombreContacto, TextBox txtCargoContacto, TextBox txtDireccion) {
+            {
+                txtCodigo.Text = "";
+                txtNombreCompania.Text = "";
+                txtNombreContacto.Text = "";
+                txtCargoContacto.Text = "";
+                txtDireccion.Text = "";
+                
+                
+            }
         }
     }
     

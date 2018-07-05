@@ -128,5 +128,11 @@ namespace WindowsFormsClases2018
             Ejercicios.fMantenimientoProveedores mantenimientoProveedor = new Ejercicios.fMantenimientoProveedores();
             mantenimientoProveedor.Show();
         }
+
+        private void mantenimientoClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ejercicios.fMantenimientoClientes mantenimientoClientes = new Ejercicios.fMantenimientoClientes();
+            mantenimientoClientes.Show();
+        }
     }
 }

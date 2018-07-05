@@ -117,6 +117,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(113, 15);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(55, 20);
@@ -370,12 +371,10 @@
         private System.Windows.Forms.TextBox txtCargoContacto;
         private System.Windows.Forms.TextBox txtNombreContacto;
         private System.Windows.Forms.TextBox txtNombreCompania;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblCargoContacto;
         private System.Windows.Forms.Label lblNombreContacto;
         private System.Windows.Forms.Label lblNombreCompania;
-        private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
@@ -398,5 +397,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn faxDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn homePageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label lblCodigo;
     }
 }

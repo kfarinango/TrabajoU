@@ -74,3 +74,4 @@ C:\Users\User\source\repos\TrabajoU\WindowsFormsClases2018\obj\Debug\WindowsForm
 C:\Users\User\source\repos\TrabajoU\WindowsFormsClases2018\obj\Debug\WindowsFormsClases2018.exe
 C:\Users\User\source\repos\TrabajoU\WindowsFormsClases2018\obj\Debug\WindowsFormsClases2018.pdb
 C:\Users\User\source\repos\TrabajoU\WindowsFormsClases2018\obj\Debug\WindowsFormsClases2018.Ejercicios.fMantenimientoProveedores.resources
+C:\Users\User\source\repos\TrabajoU\WindowsFormsClases2018\obj\Debug\WindowsFormsClases2018.Ejercicios.fMantenimientoClientes.resources

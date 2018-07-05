@@ -33,17 +33,10 @@ namespace WindowsFormsClases2018.Ejercicios
             Controles.Transacciones insSQL = new Controles.Transacciones();          
             insSQL.insertarProveedor(txtNombreCompania.Text, txtNombreContacto.Text, txtCargoContacto.Text, txtDireccion.Text);
             cargar.cargarGridView(dataGridView1, consulta);
-            limpiarTXT();
+            cargar.limpiarTextbox(txtCodigo,txtNombreCompania,txtNombreContacto,txtCargoContacto,txtDireccion);
         }
 
-        public void limpiarTXT()
-        {
-            txtCodigo.Text = "";
-            txtCargoContacto.Text = "";
-            txtDireccion.Text = "";
-            txtNombreCompania.Text = "";
-            txtNombreContacto.Text = "";
-        }
+       
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -68,12 +61,12 @@ namespace WindowsFormsClases2018.Ejercicios
                 int IDUsuario = int.Parse(this.dataGridView1.Rows[index].Cells[0].Value.ToString());
                 insSQL.eliminarProveedor(IDUsuario);
                 cargar.cargarGridView(dataGridView1, consulta);
-                limpiarTXT();
+                cargar.limpiarTextbox(txtCodigo, txtNombreCompania, txtNombreContacto, txtCargoContacto, txtDireccion);
             }
             else
             {
                 MessageBox.Show("No se a realizado ningun cambio");
-                limpiarTXT();
+                cargar.limpiarTextbox(txtCodigo, txtNombreCompania, txtNombreContacto, txtCargoContacto, txtDireccion);
             }
         }
 
@@ -86,13 +79,15 @@ namespace WindowsFormsClases2018.Ejercicios
                 int IDUsuario = int.Parse(this.dataGridView1.Rows[index].Cells[0].Value.ToString());
                 insSQL.actualizarProveedor(IDUsuario, txtNombreCompania.Text, txtNombreContacto.Text, txtCargoContacto.Text, txtDireccion.Text);
                 cargar.cargarGridView(dataGridView1, consulta);
-                limpiarTXT();
+                cargar.limpiarTextbox(txtCodigo, txtNombreCompania, txtNombreContacto, txtCargoContacto, txtDireccion);
             }
             else
             {
                 MessageBox.Show("No se a realizado ningun cambio");
-                limpiarTXT();
+                cargar.limpiarTextbox(txtCodigo, txtNombreCompania, txtNombreContacto, txtCargoContacto, txtDireccion);
             }
         }
+
+        
     }
 }
