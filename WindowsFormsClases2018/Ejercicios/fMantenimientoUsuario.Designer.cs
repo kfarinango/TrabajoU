@@ -33,6 +33,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usrcedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usrapellidopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usrapellidomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usrnombrecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usrmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usridusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usrclaveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRFDESCRIPCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vistaDatos = new WindowsFormsClases2018.vistaDatos();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -59,26 +70,15 @@
             this.lblApellidoMaterno = new System.Windows.Forms.Label();
             this.lblApellidoPaterno = new System.Windows.Forms.Label();
             this.lblCedula = new System.Windows.Forms.Label();
-            this.vistaDatos = new WindowsFormsClases2018.vistaDatos();
-            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new WindowsFormsClases2018.vistaDatosTableAdapters.DataTable1TableAdapter();
-            this.usridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usrcedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usrapellidopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usrapellidomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usrnombrecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usrmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usridusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usrclaveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRFDESCRIPCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDatos)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -130,6 +130,71 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // usridDataGridViewTextBoxColumn
+            // 
+            this.usridDataGridViewTextBoxColumn.DataPropertyName = "usrid";
+            this.usridDataGridViewTextBoxColumn.HeaderText = "usrid";
+            this.usridDataGridViewTextBoxColumn.Name = "usridDataGridViewTextBoxColumn";
+            this.usridDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usrcedulaDataGridViewTextBoxColumn
+            // 
+            this.usrcedulaDataGridViewTextBoxColumn.DataPropertyName = "usrcedula";
+            this.usrcedulaDataGridViewTextBoxColumn.HeaderText = "usrcedula";
+            this.usrcedulaDataGridViewTextBoxColumn.Name = "usrcedulaDataGridViewTextBoxColumn";
+            // 
+            // usrapellidopDataGridViewTextBoxColumn
+            // 
+            this.usrapellidopDataGridViewTextBoxColumn.DataPropertyName = "usrapellidop";
+            this.usrapellidopDataGridViewTextBoxColumn.HeaderText = "usrapellidop";
+            this.usrapellidopDataGridViewTextBoxColumn.Name = "usrapellidopDataGridViewTextBoxColumn";
+            // 
+            // usrapellidomDataGridViewTextBoxColumn
+            // 
+            this.usrapellidomDataGridViewTextBoxColumn.DataPropertyName = "usrapellidom";
+            this.usrapellidomDataGridViewTextBoxColumn.HeaderText = "usrapellidom";
+            this.usrapellidomDataGridViewTextBoxColumn.Name = "usrapellidomDataGridViewTextBoxColumn";
+            // 
+            // usrnombrecDataGridViewTextBoxColumn
+            // 
+            this.usrnombrecDataGridViewTextBoxColumn.DataPropertyName = "usrnombrec";
+            this.usrnombrecDataGridViewTextBoxColumn.HeaderText = "usrnombrec";
+            this.usrnombrecDataGridViewTextBoxColumn.Name = "usrnombrecDataGridViewTextBoxColumn";
+            // 
+            // usrmailDataGridViewTextBoxColumn
+            // 
+            this.usrmailDataGridViewTextBoxColumn.DataPropertyName = "usrmail";
+            this.usrmailDataGridViewTextBoxColumn.HeaderText = "usrmail";
+            this.usrmailDataGridViewTextBoxColumn.Name = "usrmailDataGridViewTextBoxColumn";
+            // 
+            // usridusuarioDataGridViewTextBoxColumn
+            // 
+            this.usridusuarioDataGridViewTextBoxColumn.DataPropertyName = "usridusuario";
+            this.usridusuarioDataGridViewTextBoxColumn.HeaderText = "usridusuario";
+            this.usridusuarioDataGridViewTextBoxColumn.Name = "usridusuarioDataGridViewTextBoxColumn";
+            // 
+            // usrclaveDataGridViewTextBoxColumn
+            // 
+            this.usrclaveDataGridViewTextBoxColumn.DataPropertyName = "usrclave";
+            this.usrclaveDataGridViewTextBoxColumn.HeaderText = "usrclave";
+            this.usrclaveDataGridViewTextBoxColumn.Name = "usrclaveDataGridViewTextBoxColumn";
+            // 
+            // pRFDESCRIPCDataGridViewTextBoxColumn
+            // 
+            this.pRFDESCRIPCDataGridViewTextBoxColumn.DataPropertyName = "PRFDESCRIPC";
+            this.pRFDESCRIPCDataGridViewTextBoxColumn.HeaderText = "PRFDESCRIPC";
+            this.pRFDESCRIPCDataGridViewTextBoxColumn.Name = "pRFDESCRIPCDataGridViewTextBoxColumn";
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.vistaDatos;
+            // 
+            // vistaDatos
+            // 
+            this.vistaDatos.DataSetName = "vistaDatos";
+            this.vistaDatos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnCancelar);
@@ -177,6 +242,7 @@
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGrabar
             // 
@@ -188,7 +254,6 @@
             this.btnGrabar.TabIndex = 1;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnNuevo
             // 
@@ -385,74 +450,9 @@
             this.lblCedula.TabIndex = 0;
             this.lblCedula.Text = "Cédula";
             // 
-            // vistaDatos
-            // 
-            this.vistaDatos.DataSetName = "vistaDatos";
-            this.vistaDatos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTable1BindingSource
-            // 
-            this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.vistaDatos;
-            // 
             // dataTable1TableAdapter
             // 
             this.dataTable1TableAdapter.ClearBeforeFill = true;
-            // 
-            // usridDataGridViewTextBoxColumn
-            // 
-            this.usridDataGridViewTextBoxColumn.DataPropertyName = "usrid";
-            this.usridDataGridViewTextBoxColumn.HeaderText = "usrid";
-            this.usridDataGridViewTextBoxColumn.Name = "usridDataGridViewTextBoxColumn";
-            this.usridDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // usrcedulaDataGridViewTextBoxColumn
-            // 
-            this.usrcedulaDataGridViewTextBoxColumn.DataPropertyName = "usrcedula";
-            this.usrcedulaDataGridViewTextBoxColumn.HeaderText = "usrcedula";
-            this.usrcedulaDataGridViewTextBoxColumn.Name = "usrcedulaDataGridViewTextBoxColumn";
-            // 
-            // usrapellidopDataGridViewTextBoxColumn
-            // 
-            this.usrapellidopDataGridViewTextBoxColumn.DataPropertyName = "usrapellidop";
-            this.usrapellidopDataGridViewTextBoxColumn.HeaderText = "usrapellidop";
-            this.usrapellidopDataGridViewTextBoxColumn.Name = "usrapellidopDataGridViewTextBoxColumn";
-            // 
-            // usrapellidomDataGridViewTextBoxColumn
-            // 
-            this.usrapellidomDataGridViewTextBoxColumn.DataPropertyName = "usrapellidom";
-            this.usrapellidomDataGridViewTextBoxColumn.HeaderText = "usrapellidom";
-            this.usrapellidomDataGridViewTextBoxColumn.Name = "usrapellidomDataGridViewTextBoxColumn";
-            // 
-            // usrnombrecDataGridViewTextBoxColumn
-            // 
-            this.usrnombrecDataGridViewTextBoxColumn.DataPropertyName = "usrnombrec";
-            this.usrnombrecDataGridViewTextBoxColumn.HeaderText = "usrnombrec";
-            this.usrnombrecDataGridViewTextBoxColumn.Name = "usrnombrecDataGridViewTextBoxColumn";
-            // 
-            // usrmailDataGridViewTextBoxColumn
-            // 
-            this.usrmailDataGridViewTextBoxColumn.DataPropertyName = "usrmail";
-            this.usrmailDataGridViewTextBoxColumn.HeaderText = "usrmail";
-            this.usrmailDataGridViewTextBoxColumn.Name = "usrmailDataGridViewTextBoxColumn";
-            // 
-            // usridusuarioDataGridViewTextBoxColumn
-            // 
-            this.usridusuarioDataGridViewTextBoxColumn.DataPropertyName = "usridusuario";
-            this.usridusuarioDataGridViewTextBoxColumn.HeaderText = "usridusuario";
-            this.usridusuarioDataGridViewTextBoxColumn.Name = "usridusuarioDataGridViewTextBoxColumn";
-            // 
-            // usrclaveDataGridViewTextBoxColumn
-            // 
-            this.usrclaveDataGridViewTextBoxColumn.DataPropertyName = "usrclave";
-            this.usrclaveDataGridViewTextBoxColumn.HeaderText = "usrclave";
-            this.usrclaveDataGridViewTextBoxColumn.Name = "usrclaveDataGridViewTextBoxColumn";
-            // 
-            // pRFDESCRIPCDataGridViewTextBoxColumn
-            // 
-            this.pRFDESCRIPCDataGridViewTextBoxColumn.DataPropertyName = "PRFDESCRIPC";
-            this.pRFDESCRIPCDataGridViewTextBoxColumn.HeaderText = "PRFDESCRIPC";
-            this.pRFDESCRIPCDataGridViewTextBoxColumn.Name = "pRFDESCRIPCDataGridViewTextBoxColumn";
             // 
             // fMantenimientoUsuario
             // 
@@ -469,13 +469,13 @@
             this.Load += new System.EventHandler(this.fMantenimientoUsuario_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDatos)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

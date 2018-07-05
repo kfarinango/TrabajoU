@@ -14,6 +14,7 @@ namespace WindowsFormsClases2018.Ejercicios
     {
         Controles.encriptacionAES en = new Controles.encriptacionAES();
         Controles.Transacciones cargar = new Controles.Transacciones();
+        string consulta = "SELECT Usuario.usrid, Usuario.usrcedula, Usuario.usrapellidop, Usuario.usrapellidom, Usuario.usrnombrec, Usuario.usrmail, Usuario.usridusuario, Usuario.usrclave, PERFILES_USUARIOS.PRFDESCRIPC FROM PERFILES_USUARIOS INNER JOIN  Usuario ON PERFILES_USUARIOS.PRFCODIGOI = Usuario.prfcodigoi";
         int index;
         public fMantenimientoUsuario()
         {
@@ -81,32 +82,13 @@ namespace WindowsFormsClases2018.Ejercicios
 
         }
 
-        private void btnGrabar_Click(object sender, EventArgs e)
-        {
-            DialogResult resultado = MessageBox.Show("En realidad quiere cambiar los datos del usuario " + this.dataGridView1.Rows[index].Cells[2].Value.ToString() + " " + this.dataGridView1.Rows[index].Cells[3].Value.ToString() + "", "Actualizar datos de usuario", MessageBoxButtons.YesNo);
-            if (resultado == DialogResult.Yes)
-            {
-                Controles.Transacciones insSQL = new Controles.Transacciones();
-                String pass = en.encriptacion(textPassword.Text);
-                int IDUsuario = int.Parse(this.dataGridView1.Rows[index].Cells[0].Value.ToString());
-                insSQL.actualizarUsuario(IDUsuario, textCedula.Text, textApelllidoPaterno.Text, textApellidoMaterno.Text, textNombres.Text, textEMail.Text, textIDUsuario.Text, pass, comboBoxPerfil.SelectedIndex+1);
-                string tabla = "Usuario";
-                cargar.cargarGridView(dataGridView1, tabla);
-                limpiarTXT();
-            }
-            else {
-                MessageBox.Show("No se a realizado ningun cambio");
-                limpiarTXT();
-            }
-        }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Controles.Transacciones insSQL = new Controles.Transacciones();
             String pass = en.encriptacion(textPassword.Text);
             insSQL.insertarUsuario(textCedula.Text, textApelllidoPaterno.Text, textApellidoMaterno.Text, textNombres.Text, textEMail.Text, textIDUsuario.Text, pass, comboBoxPerfil.SelectedIndex+1);
-            string tabla = "Usuario";
-            cargar.cargarGridView(dataGridView1, tabla);
+            cargar.cargarGridView(dataGridView1, consulta);
             limpiarTXT();
         }
 
@@ -136,11 +118,29 @@ namespace WindowsFormsClases2018.Ejercicios
                 String pass = en.encriptacion(textPassword.Text);
                 int IDUsuario = int.Parse(this.dataGridView1.Rows[index].Cells[0].Value.ToString());
                 insSQL.eliminarUsuario(IDUsuario);
-                string tabla = "Usuario";
-                cargar.cargarGridView(dataGridView1, tabla);
+                cargar.cargarGridView(dataGridView1, consulta);
                 limpiarTXT();
             }
             else {
+                MessageBox.Show("No se a realizado ningun cambio");
+                limpiarTXT();
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("En realidad quiere cambiar los datos del usuario " + this.dataGridView1.Rows[index].Cells[2].Value.ToString() + " " + this.dataGridView1.Rows[index].Cells[3].Value.ToString() + "", "Actualizar datos de usuario", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes)
+            {
+                Controles.Transacciones insSQL = new Controles.Transacciones();
+                String pass = en.encriptacion(textPassword.Text);
+                int IDUsuario = int.Parse(this.dataGridView1.Rows[index].Cells[0].Value.ToString());
+                insSQL.actualizarUsuario(IDUsuario, textCedula.Text, textApelllidoPaterno.Text, textApellidoMaterno.Text, textNombres.Text, textEMail.Text, textIDUsuario.Text, pass, comboBoxPerfil.SelectedIndex + 1);
+                cargar.cargarGridView(dataGridView1, consulta);
+                limpiarTXT();
+            }
+            else
+            {
                 MessageBox.Show("No se a realizado ningun cambio");
                 limpiarTXT();
             }

@@ -66,6 +66,7 @@
             this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.amortizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +85,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.mantenimientoUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -389,7 +390,8 @@
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.amortizaciónToolStripMenuItem,
-            this.mantenimientoUsuariosToolStripMenuItem});
+            this.mantenimientoUsuariosToolStripMenuItem,
+            this.mantenimientoProveedorToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(68, 20);
             this.toolStripMenuItem1.Text = "Ejercicios";
@@ -401,6 +403,13 @@
             this.amortizaciónToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.amortizaciónToolStripMenuItem.Text = "Amortización";
             this.amortizaciónToolStripMenuItem.Click += new System.EventHandler(this.amortizaciónToolStripMenuItem_Click);
+            // 
+            // mantenimientoUsuariosToolStripMenuItem
+            // 
+            this.mantenimientoUsuariosToolStripMenuItem.Name = "mantenimientoUsuariosToolStripMenuItem";
+            this.mantenimientoUsuariosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.mantenimientoUsuariosToolStripMenuItem.Text = "Mantenimiento Usuarios";
+            this.mantenimientoUsuariosToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoUsuariosToolStripMenuItem_Click);
             // 
             // helpMenu
             // 
@@ -547,12 +556,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // mantenimientoUsuariosToolStripMenuItem
+            // mantenimientoProveedorToolStripMenuItem
             // 
-            this.mantenimientoUsuariosToolStripMenuItem.Name = "mantenimientoUsuariosToolStripMenuItem";
-            this.mantenimientoUsuariosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.mantenimientoUsuariosToolStripMenuItem.Text = "Mantenimiento Usuarios";
-            this.mantenimientoUsuariosToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoUsuariosToolStripMenuItem_Click);
+            this.mantenimientoProveedorToolStripMenuItem.Name = "mantenimientoProveedorToolStripMenuItem";
+            this.mantenimientoProveedorToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.mantenimientoProveedorToolStripMenuItem.Text = "Mantenimiento Proveedor";
+            this.mantenimientoProveedorToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoProveedorToolStripMenuItem_Click);
             // 
             // MenuPrincipal
             // 
@@ -634,6 +643,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem amortizaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoProveedorToolStripMenuItem;
     }
 }
 

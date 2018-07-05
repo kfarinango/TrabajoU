@@ -83,11 +83,71 @@ namespace WindowsFormsClases2018.Controles
 
         }
 
-        public void cargarGridView(DataGridView dataGrid, string tabla)
+        //Proveedores
+
+        public void insertarProveedor(string CompanyName, string ContactName, string ContactTitle, string Address)
+        {
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["coneccion"].ToString()))
+            {
+                cn.Open();
+                SqlCommand cmdact = new SqlCommand();
+                cmdact.CommandText = "CrearProveedor";
+                cmdact.CommandType = CommandType.StoredProcedure;
+                cmdact.Connection = cn;
+                cmdact.Parameters.AddWithValue("@CompanyName", CompanyName);
+                cmdact.Parameters.AddWithValue("@ContactName", ContactName);
+                cmdact.Parameters.AddWithValue("@ContactTitle", ContactTitle);
+                cmdact.Parameters.AddWithValue("@Address", Address);
+                cmdact.ExecuteNonQuery();
+                cn.Close();
+            }
+
+        }
+        public void eliminarProveedor(int SupplierID)
+        {
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["coneccion"].ToString()))
+            {
+                cn.Open();
+                SqlCommand cmdact = new SqlCommand();
+                cmdact.CommandText = "EliminarProveedor";
+                cmdact.CommandType = CommandType.StoredProcedure;
+                cmdact.Connection = cn;
+
+                cmdact.Parameters.AddWithValue("@SupplierID", SupplierID);
+                cmdact.ExecuteNonQuery();
+                cn.Close();
+            }
+
+        }
+
+        public void actualizarProveedor(int SupplierID,string CompanyName, string ContactName, string ContactTitle, string Address)
+        {
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["coneccion"].ToString()))
+            {
+                cn.Open();
+                SqlCommand cmdact = new SqlCommand();
+                cmdact.CommandText = "ActualizarProveedor";
+                cmdact.CommandType = CommandType.StoredProcedure;
+                cmdact.Connection = cn;
+
+                cmdact.Parameters.AddWithValue("@SupplierID", SupplierID);
+                cmdact.Parameters.AddWithValue("@CompanyName", CompanyName);
+                cmdact.Parameters.AddWithValue("@ContactName", ContactName);
+                cmdact.Parameters.AddWithValue("@ContactTitle", ContactTitle);
+                cmdact.Parameters.AddWithValue("@Address", Address);
+                cmdact.ExecuteNonQuery();
+                cn.Close();
+            }
+
+        }
+
+        //Otras funciones
+
+        public void cargarGridView(DataGridView dataGrid, string consulta)
         {
             using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["coneccion"].ToString())) {
                  DataTable dt;
-                SqlDataAdapter da = new SqlDataAdapter("SELECT Usuario.usrid, Usuario.usrcedula, Usuario.usrapellidop, Usuario.usrapellidom, Usuario.usrnombrec, Usuario.usrmail, Usuario.usridusuario, Usuario.usrclave, PERFILES_USUARIOS.PRFDESCRIPC FROM PERFILES_USUARIOS INNER JOIN  Usuario ON PERFILES_USUARIOS.PRFCODIGOI = Usuario.prfcodigoi", cn);
+                SqlDataAdapter da = new SqlDataAdapter(consulta, cn);
                 dt = new DataTable();
                 da.Fill(dt);
                 dataGrid.DataSource = dt;
